@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+ <script src="http://static.ak.connect.facebook.com/js/api_lib/v0.4/FeatureLoader.js.php" type="text/javascript">
+   </script>
+   <fb:login-button onlogin="facebook_onlogin();"></fb:login-button>
+   <script type="text/javascript">
+     FB.init({ appId:"303444946372991"});
+     var facebook_onlogin() function() {
+         // here is the trick
+         window.location.href = '/register/facebook';
+     }
+   </script>
+   
+   
+   
+	<form action="" method="post">{% csrf_token %}
+   			{{ form.as_p }}
+    <p><input type="submit" value="Create" /></p>
+ 	</form>
+
+{% endblock %}
